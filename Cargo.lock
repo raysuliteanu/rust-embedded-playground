@@ -272,17 +272,18 @@ dependencies = [
 
 [[package]]
 name = "panic-halt"
-version = "0.2.0"
+version = "1.0.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "de96540e0ebde571dc55c73d60ef407c653844e6f9a1e2fdbd40c07b9252d812"
+checksum = "a513e167849a384b7f9b746e517604398518590a9142f4846a32e3c2a4de7b11"
 
 [[package]]
 name = "panic-rtt-target"
-version = "0.1.2"
+version = "0.2.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "0d6ab67bc881453e4c90f958c657c1303670ea87bc1a16e87fd71a40f656dce9"
+checksum = "9a8116ffce1f89818647b84fba66d16cfdf3c0bee3c9320e606588d3e7415ce7"
 dependencies = [
- "cortex-m",
+ "critical-section",
+ "portable-atomic",
  "rtt-target",
 ]
 
@@ -318,11 +319,12 @@ checksum = "ec0be4795e2f6a28069bec0b5ff3e2ac9bafc99e6a9a7dc3547996c5c816922c"
 
 [[package]]
 name = "rtt-target"
-version = "0.3.1"
+version = "0.6.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "065d6058bb1204f51a562a67209e1817cf714759d5cf845aa45c75fa7b0b9d9b"
+checksum = "4235cd78091930e907d2a510adb0db1369e82668eafa338f109742fa0c83059d"
 dependencies = [
- "cortex-m",
+ "critical-section",
+ "portable-atomic",
  "ufmt-write",
 ]
 
