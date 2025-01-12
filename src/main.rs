@@ -7,6 +7,7 @@ use microbit::display::blocking::Display;
 use microbit::hal::timer::Timer;
 use microbit::pac::TIMER0;
 use panic_halt as _;
+use rand::prelude::*;
 
 const DELAY: u32 = 100;
 
@@ -45,22 +46,13 @@ fn main() -> ! {
     let board = Board::take().unwrap();
     let mut led_matrix = LedMatrix::new(board);
 
+    let mut rng = SmallRng::seed_from_u64(0xdeadbeef);
+
     // infinite loop; just so we don't leave this stack frame
     loop {
-        for c in 0..5 {
-            led_matrix.show(0, c);
-        }
+        let r: usize = rng.gen_range(0..5);
+        let c: usize = rng.gen_range(0..5);
 
-        led_matrix.show(1, 4);
-        led_matrix.show(2, 4);
-        led_matrix.show(3, 4);
-
-        for c in (0..5).rev() {
-            led_matrix.show(4, c);
-        }
-
-        led_matrix.show(3, 0);
-        led_matrix.show(2, 0);
-        led_matrix.show(1, 0);
+        led_matrix.show(r, c);
     }
 }
