@@ -1,4 +1,4 @@
 [workspace]
-members = ["macros", "macros-test"]
+members = ["random-leds", "countdown"]
 package = { version = "0.1.0", edition = "2021" }
 resolver = "2"
