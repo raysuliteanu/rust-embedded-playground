@@ -1,4 +1,4 @@
 [workspace]
-members = ["random-leds", "countdown"]
+members = ["random-leds", "countdown", "embassy-ex"]
 package = { version = "0.1.0", edition = "2021" }
 resolver = "2"
