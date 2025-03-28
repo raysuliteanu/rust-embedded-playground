@@ -12,15 +12,18 @@ cortex-m = { version = "0.7.7", features = [
 ] }
 cortex-m-rt = "0.7.5"
 defmt = { version = "0.3.10", optional = true }
-defmt-rtt = { version = "0.4.1", optional = true }
+defmt-rtt = { version = "0.4.2", optional = true }
+embassy-executor = { version = "0.7.0", features = [
+  "arch-cortex-m",
+  "executor-thread",
+] }
 embassy-futures = "0.1.1"
-embassy-executor = "0.7.0"
 embassy-nrf = { version = "0.3.1", features = [
   "nrf52833",
   "gpiote",
   "time-driver-rtc1",
 ] }
-embassy-sync = "0.6.1"
+embassy-sync = "0.6.2"
 embassy-time = { version = "0.4.0", features = ["tick-hz-32_768"] }
 panic-halt = "1.0.0"
 panic-probe = { version = "0.3.2", features = ["print-defmt"], optional = true }
@@ -30,17 +33,17 @@ name = "embassy-ex"
 test = false
 bench = false
 
-[profile.dev]
-debug = true
-lto = true
-opt-level = "z"
-incremental = true
-
-[profile.release]
-debug = false
-lto = true
-opt-level = "z"
-incremental = true
+# [profile.dev]
+# debug = true
+# lto = true
+# opt-level = "z"
+# incremental = true
+#
+# [profile.release]
+# debug = false
+# lto = true
+# opt-level = "z"
+# incremental = true
 
 [features]
 defmt = ["dep:defmt"]

@@ -1,4 +1,16 @@
 [workspace]
 members = ["random-leds", "countdown", "embassy-ex"]
-package = { version = "0.1.0", edition = "2021" }
+package = { version = "0.1.0", edition = "2024" }
 resolver = "2"
+
+[profile.dev]
+debug = true
+lto = true
+opt-level = "z"
+incremental = true
+
+[profile.release]
+debug = false
+lto = true
+opt-level = "z"
+incremental = true
