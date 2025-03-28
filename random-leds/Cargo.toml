@@ -8,7 +8,7 @@ microbit-v2 = "0.15.1"
 cortex-m = "0.7.7"
 cortex-m-rt = "0.7.5"
 panic-halt = "1.0.0"
-rand = { version = "0.8.5", default-features = false, features = ["small_rng"] }
+rand = { version = "0.9", default-features = false, features = ["small_rng"] }
 # rtt-target = { version = "0.6.1" }
 # panic-rtt-target = { version = "0.2.0" }
 

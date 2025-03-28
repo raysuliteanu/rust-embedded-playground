@@ -50,8 +50,8 @@ fn main() -> ! {
 
     // infinite loop; just so we don't leave this stack frame
     loop {
-        let r: usize = rng.gen_range(0..5);
-        let c: usize = rng.gen_range(0..5);
+        let r: usize = rng.random_range(0..5);
+        let c: usize = rng.random_range(0..5);
 
         led_matrix.show(r, c);
     }
